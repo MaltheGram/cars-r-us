@@ -15,7 +15,4 @@ import java.time.LocalDateTime;
 public class ReservationRequest {
     private LocalDateTime reservationDate;
     private LocalDateTime rentalDate;
-
-    public ReservationRequest(ReservationRequest body) {
-    }
 }

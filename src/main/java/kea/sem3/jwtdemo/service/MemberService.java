@@ -36,9 +36,11 @@ public class MemberService {
         if (memberRepository.existsById((body.getUsername()))) {
             throw new Client4xxException("Provided user name is taken");
         }
-        if (memberRepository.emailExist(body.getEmail())) {
+        /*if (memberRepository.emailExist(body.getEmail())) {
             throw new Client4xxException("Provided email is taken");
         }
+
+         */
         Member member = new Member(body);
         member.addRole(Role.USER);
         member = memberRepository.save(member);

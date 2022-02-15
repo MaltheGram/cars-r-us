@@ -1,6 +1,6 @@
 ### This project will be described with my weekly handin.
 
-[![Build and deploy JAR app to Azure Web App - FastAndFuriousCars](https://github.com/MaltheGram/cars-r-us-startcode/actions/workflows/main_fastandfuriouscars.yml/badge.svg)](https://github.com/MaltheGram/cars-r-us-startcode/actions/workflows/main_fastandfuriouscars.yml)
+[![Build and deploy JAR app to Azure Web App - FastAndFuriousCars](https://github.com/MaltheGram/cars-r-us/actions/workflows/main_fastandfuriouscars.yml/badge.svg)](https://github.com/MaltheGram/cars-r-us/actions/workflows/main_fastandfuriouscars.yml)
 
 <details>
  <summary>

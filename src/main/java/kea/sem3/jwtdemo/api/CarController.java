@@ -35,6 +35,11 @@ public class CarController {
         return carService.editCar(body,id);
     }
 
+    @PatchMapping("/{id}&{newPrice}")
+    public void editPrice(@PathVariable int id, @PathVariable double newPrice) throws Exception{
+        carService.updatePrice(id,newPrice);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteCar(@PathVariable int id){
         carService.deleteCar(id);

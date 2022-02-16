@@ -1,5 +1,6 @@
 package kea.sem3.jwtdemo.service;
 
+import kea.sem3.jwtdemo.dto.CarRequest;
 import kea.sem3.jwtdemo.dto.MemberRequest;
 import kea.sem3.jwtdemo.dto.MemberResponse;
 import kea.sem3.jwtdemo.entity.Member;
@@ -33,13 +34,14 @@ public class MemberService {
 
     public MemberResponse addMember(MemberRequest body) {
 
-        if (memberRepository.existsById((body.getUsername()))) {
-            throw new Client4xxException("Provided user name is taken");
+        while (body.getUsername().equals(" ")){
+            if (memberRepository.existsById((body.getUsername()))) {
+                throw new Client4xxException(body.getUsername() +  " is taken. Please try again");
+            }
         }
         /*if (memberRepository.emailExist(body.getEmail())) {
             throw new Client4xxException("Provided email is taken");
         }
-
          */
         Member member = new Member(body);
         member.addRole(Role.USER);

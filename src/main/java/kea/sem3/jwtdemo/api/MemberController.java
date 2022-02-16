@@ -29,7 +29,6 @@ public class MemberController {
 
     @PostMapping()
     public MemberResponse AddMember(@RequestBody MemberRequest body) {
-        System.out.println("Hello");
         return memberService.addMember(body);
     }
 }

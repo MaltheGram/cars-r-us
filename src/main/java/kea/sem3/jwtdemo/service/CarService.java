@@ -42,11 +42,19 @@ public class CarService {
         carToEdit.setModel(body.getModel());
         carToEdit.setPricePrDay(body.getPricePrDay());
         carToEdit.setBestDiscount(body.getBestDiscount());
+        carRepository.save(carToEdit);
 
-        return new CarResponse(carToEdit,false);
+        return new CarResponse(carToEdit,true);
     }
     public void deleteCar(int id) {
         carRepository.deleteById(id);
+    }
+
+    // Service for PATCH method
+    public void updatePrice(int id, double newPricePrDay){
+        Car car = carRepository.findById(id).orElseThrow(() -> new Client4xxException("No car with id: " + id));
+        car.setPricePrDay(newPricePrDay);
+        carRepository.save(car);
     }
 }
 

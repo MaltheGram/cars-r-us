@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,14 +18,13 @@ import java.util.stream.Collectors;
 public class ReservationResponse {
     Long id;
     LocalDateTime reservationDate;
-    LocalDateTime rentalDate;
+    LocalDate rentalDate;
 
     public ReservationResponse(Reservation reservation) {
       this.id = reservation.getId();
       this.rentalDate = reservation.getRentalDate();
       this.reservationDate = reservation.getReservationDate();
     }
-
 
     public static List<ReservationResponse> getReservationsFromEntities(List<Reservation> reservations){
         return reservations.stream().map(reservation -> new ReservationResponse(reservation)).collect(Collectors.toList());

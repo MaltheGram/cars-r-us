@@ -1,22 +1,20 @@
 package kea.sem3.jwtdemo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import kea.sem3.jwtdemo.dto.ReservationRequest;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
 @Getter
 @Setter
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@ToString
 public class Reservation {
 
     @Id
@@ -28,28 +26,22 @@ public class Reservation {
     private LocalDateTime reservationDate;
 
     @Column (name = "rentalDate")
-    @CreationTimestamp
-    private LocalDateTime rentalDate;
+    private LocalDate rentalDate;
 
     @JsonIgnore
     @ManyToOne
-    private Car car;
+    private Car reservedCar;
 
     @JsonIgnore
     @ManyToOne
-    private Member member;
+    private Member reservedTo;
 
-
-    public Reservation(Car car,Long id, LocalDateTime reservationDate, LocalDateTime rentalDate) {
-        this.car = car;
-        this.id = id;
-        this.reservationDate = reservationDate;
+    public Reservation(LocalDate rentalDate, Car reservedCar, Member member){
         this.rentalDate = rentalDate;
-    }
+        this.reservedCar = reservedCar;
+        this.reservedTo = member;
+        reservedCar.addReservation(this);
+        reservedTo.addReservation(this);
 
-    public Reservation(ReservationRequest body, Car car) {
-        this.reservationDate = body.getReservationDate();
-        this.rentalDate = body.getRentalDate();
-        this.car = car;
     }
 }

@@ -7,8 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,7 +43,7 @@ public class CarResponse {
     }
 
     public static List<CarResponse> getCarsFromEntities(List<Car> cars) {
-        //                                Set this to true if we want to show crated info
+        //                                Set this to true if we want to show created info
         return cars.stream().map(car -> new CarResponse(car,false)).collect(Collectors.toList());
     }
 }

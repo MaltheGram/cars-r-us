@@ -2,15 +2,15 @@ package kea.sem3.jwtdemo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kea.sem3.jwtdemo.dto.MemberRequest;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -45,13 +45,15 @@ public class Member extends BaseUser{
     private LocalDateTime dateEdited;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "reservedTo")
+    @Getter(AccessLevel.NONE)
     private Set<Reservation> reservations = new HashSet<>();
 
-
-    public Set<Reservation> getReservations() {
-        return reservations;
+    // Fix this method
+    public void addReservation(Reservation reservation){
+        reservations.add(reservation);
     }
+
 
     public Member(){}
 

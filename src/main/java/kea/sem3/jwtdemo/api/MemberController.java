@@ -31,5 +31,24 @@ public class MemberController {
     public MemberResponse AddMember(@RequestBody MemberRequest body) {
         return memberService.addMember(body);
     }
+
+   @PutMapping("/{userName}")
+   public MemberResponse editMember(@RequestBody MemberRequest body, @PathVariable String userName){
+        return memberService.editMember(body,userName,true);
+   }
+
+   @PatchMapping("/{userName}&{firstName}&{lastName}")
+   public void editNames(@PathVariable String userName, @PathVariable String firstName, @PathVariable String lastName) throws Exception{
+        memberService.updateNames(userName,firstName,lastName);
+   }
+
+   @DeleteMapping("/{userName}")
+   public void deleteMember(@PathVariable String userName){
+        memberService.deleteMember(userName);
+   }
+
+
+
+
 }
 

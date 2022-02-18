@@ -16,5 +16,6 @@ public class MemberRequest {
     String lastName;
     String street;
     String city;
+    int ranking;
     int zip;
 }

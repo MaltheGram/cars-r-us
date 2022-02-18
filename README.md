@@ -4,7 +4,7 @@
 
 <details>
  <summary>
-  First handing / 4th Februrary 2022 - Learning basic <b>Annotations</b>
+  First hand-in / 4th Februrary 2022 - Learning basic <b>Annotations</b>
   </summary>
   <br>
   I've added the following Enities and Repositories for this first handin:
@@ -27,7 +27,7 @@
  
  <details> 
   <summary> 
-   Second hand / Februry 12th 2022 - Tests
+   Second hand-in / Februrary 12th 2022 - Tests
   </summary>
   <br>
   In this hand in we've focused alot more attention onto tests.
@@ -38,3 +38,14 @@
    <li> Mock Test with Mockito </li>
    <li> Api Tests </li>
  </details> 
+  
+  
+<details>
+ <summary>
+  Third hand-in / Februrary 18th 2022 - Full CRUD API for Member and Car classes
+ </summary>
+ <br>
+ Made a full CRUD API for Member and Car. At this stage we're able to patch only a few fields for a Member / Car.
+ <br>
+Also stared on CRUD for Reservation. This is TBC.
+

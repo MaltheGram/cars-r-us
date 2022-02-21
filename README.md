@@ -47,7 +47,7 @@
  <br>
  Made a full CRUD API for Member and Car. At this stage we're able to patch only a few fields for a Member / Car.
  <br>
-Also stared on CRUD for Reservation. This is TBC.
+Also started on CRUD for Reservation. This is TBC.
  <br>
  Should also be deployed to Azure.
 

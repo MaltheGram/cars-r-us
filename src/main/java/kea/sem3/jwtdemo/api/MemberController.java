@@ -31,7 +31,7 @@ public class MemberController {
     public MemberResponse AddMember(@RequestBody MemberRequest body) {
         return memberService.addMember(body);
     }
-f
+
    @PutMapping("/{userName}")
    public MemberResponse editMember(@RequestBody MemberRequest body, @PathVariable String userName){
         return memberService.editMember(body,userName,true);

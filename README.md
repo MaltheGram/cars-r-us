@@ -50,4 +50,14 @@
 Also started on CRUD for Reservation. This is TBC.
  <br>
  Should also be deployed to Azure.
+  </details>
+ 
+<details>
+ <summary>
+  Fourth hand-in / March 2nd 2022 - Docker container with MySQL
+ </summary>
+ <br>
+ Deployed to Azure with a Docker container running on Ubuntu. Installed MySQL and the database is now stored on Azure.
+  </details>
+ 
 
